@@ -1,0 +1,29 @@
+\mode<presentation>
+
+% Individual Frames
+\defbeamertemplate*{frametitle}{cybersoc}[1][]
+{
+	\vspace{5pt}
+	{\huge \insertframetitle}
+
+	% logo
+	\begin{tikzpicture}[overlay, remember picture]
+		\node[anchor=south east , xshift=-10pt, yshift=10pt] at (current page.south east) {\includegraphics[width=1.5cm]{cybersoc-logo.png}};
+	\end{tikzpicture}
+
+}
+
+\setbeamertemplate{background}{
+	\begin{tikzpicture}[overlay]
+		\definecolor{headercolor}{RGB}{47,96,81}
+		\useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+		\ifx\insertframetitle\empty\relax %% if title is not empty, add header.
+			\else{
+				\fill[color=headercolor!55!black!100] (0,0) rectangle(\the\paperwidth, -1.2);
+				\fill[black!100] (0,-1.2) rectangle(\the\paperwidth, -1.15);
+			}
+		\fi
+	\end{tikzpicture}
+}
+
+\mode<all>

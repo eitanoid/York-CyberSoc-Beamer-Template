@@ -1,0 +1,97 @@
+\mode<presentation>
+
+% Main title page
+\defbeamertemplate*{title page}{cybersoc}[1][]
+{
+\centering
+\vskip1cm
+\includegraphics[width=0.35\textwidth]{cybersoc-workshops.png}
+\vskip0.2cm
+{ \huge\inserttitle\par }
+\vskip0.25cm
+\insertauthor\par
+\insertdate\par
+\vfill
+}
+
+\AtBeginSection[]{
+	\begin{frame}
+		\vfill
+		\centering
+		\begin{tikzpicture}[overlay]
+			\node[midway] (current page.center){ \Huge\insertsectionhead };
+		\end{tikzpicture}
+		% \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+		% 	\usebeamerfont{title}\insertsectionhead\par%
+		% 	\color{black}\hrulefill
+		% \end{beamercolorbox}
+		\vfill
+	\end{frame}
+}
+
+
+% End page
+\def\endpage{
+	\begin{frame}
+		\begin{tikzpicture}[overlay]
+			\fill[color=white] (-1,9) rectangle(\the\paperwidth, -1.2);
+		\end{tikzpicture}
+
+		\centering
+		\vskip1cm
+		\includegraphics[width=0.35\textwidth]{cybersoc-workshops.png}
+		\vskip0.2cm
+		{ \huge Thanks! \par }
+		\vskip0.25cm
+		We hope to see you at our next event
+		\vfill
+
+	\end{frame}
+}
+
+
+% \setbeamertemplate{footline} % TODO: make this work like I want it.
+% {
+% 	\begin{tikzpicture}[overlay]
+% 		\useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+% 		\fill[color=black] (0,0) rectangle(\the\paperwidth, -\the\paperheight);
+% 	\end{tikzpicture}
+%
+% 	\hbox{
+% 		\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm]{white}%
+% 			\insertshorttitle
+% 		\end{beamercolorbox}%
+% 		\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{}%
+% 			\usebeamerfont{author in head/foot}\insertshortauthor\hfill\insertframenumber
+% 		\end{beamercolorbox}}%
+%
+% 	\vskip0pt%
+%
+% }
+
+% \setbeamertemplate{headline}{%
+% 	\vskip4pt
+% 	\hbox{%
+% 		\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm]{blue}%
+% 			\usebeamerfont{frametitle}\Huge\insertframetitle
+% 		\end{beamercolorbox}%
+%
+% 		% \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.125ex]{blue}%
+% 		% 	\huge\insertframetitle %\insertsectionnavigationhorizontal{\paperwidth}{}{\hskip0pt plus1filll}
+% 		% \end{beamercolorbox}%
+% 	}
+% }
+
+
+
+% Items
+\setbeamertemplate{itemize item}{$\blacktriangleright$}
+\setbeamertemplate{itemize subitem}{$\blacktriangleright$}
+\setbeamertemplate{itemize subsubitem}{$\blacktriangleright$}
+\setbeamertemplate{enumerate items}[plain]
+
+\setbeamertemplate{sections/subsections in toc}[circle]
+
+
+\mode<all>
+

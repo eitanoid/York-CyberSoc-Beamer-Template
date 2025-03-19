@@ -1,0 +1,65 @@
+%! TeX program = xelatex
+%! TEX TS-program = xelatex
+% https://tex.stackexchange.com/questions/146529/design-a-custom-beamer-theme-from-scratch
+
+\documentclass[aspectratio=169, 16pt]{beamer}
+\usepackage{tikz,graphics, fontspec}
+\usetheme{cybersoc}
+\setmainfont{Ubuntu}
+
+% \setbeamersize % fuck around with this in a different presentations; fucks with images
+% {
+%     text margin left=0.5cm,
+%     text margin right=0.5cm
+% }
+
+% Information
+\title[Subtitle]{Title}
+\author[Short Author]{Author}
+\date[Short Date]{March 2025}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Section Page}
+
+\begin{frame}
+	\frametitle{RSA Cryptography}
+
+	\begin{enumerate}
+		\item Pick 2 primes $p$ and $q$.
+		\item Compute $n = pq$
+		\item Calculate $\Phi(n) = (q-1)(p-1)$
+		\item Pick $1 < e < \Phi(n)$ s.t $\gcd(e,\Phi(n)) = 1$
+		\item Pick $d$ s.t $d\cdot e \equiv 1 \mod \Phi(n)$
+		\item The pair $(n,e)$ is public
+		\item The pair $(n, d)$ is private.
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}{A longer title}
+	\begin{itemize}
+		\item Always visible
+		\item<2-> this shows up later
+			\begin{itemize}
+				\item 1st indent
+				      \begin{itemize}
+					      \item 2nd indent
+				      \end{itemize}
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Ttitle 3}
+	\begin{theorem}[Theorem box]
+		This is a theorem box.
+	\end{theorem}
+
+\end{frame}
+
+\endpage
+
+\end{document}
